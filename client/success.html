@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./payment.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>Thank you for your purchase.</h2>
+    <h3>Your payment has been successfully processed.</h3>
+    <h3><b>Here are the products you purchased:</b></h3>
+    <ul id="download-list"></ul>
+    <button id="download-button">Download files</button>
+
+    <h4>A confirmation email will be sent to the email address you provided during the payment.</h4> 
+    <p>contact me on <b>denibeatzcontact@gmail.com</b> for complaints, queries and ambiguities!</p>
+
+    <script>
+        // Retrieve the purchased items from the server and populate the download list
+        // Retrieve the purchased items from the server and populate the download list
+fetch('/cart-items')
+  .then(response => response.json())
+  .then(data => {
+    const downloadList = document.querySelector('#download-list');
+    const cartItems = data.items;
+
+    const uniqueItems = new Map(); // Use a Map to store unique items based on license and name
+
+    cartItems.forEach(item => {
+      const key = `${item.title}_${item.license}`;
+      if (!uniqueItems.has(key)) {
+        uniqueItems.set(key, item); // Store the first occurrence of the item
+      }
+    });
+
+    uniqueItems.forEach(item => {
+      const listItem = document.createElement('li');
+      const downloadLink = document.createElement('a');
+      downloadLink.href = `/download?productId=${item.id}`;
+      downloadLink.textContent = `Download ${item.title}`;
+      listItem.appendChild(downloadLink);
+      downloadList.appendChild(listItem);
+    });
+  })
+  .catch(error => {
+    console.error('Failed to fetch cart items', error);
+  });
+
+        // Download all the purchased files at once
+        const downloadButton = document.querySelector('#download-button');
+        downloadButton.addEventListener('click', () => {
+            const cartItems = document.querySelectorAll('#download-list li a');
+            cartItems.forEach(item => {
+                item.click();
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!--Next make that it automatic downloads on same success page and does not go on google because cutomer may need to login into google,and make for every product invidual download-->

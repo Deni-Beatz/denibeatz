@@ -1,0 +1,184 @@
+<!--Provjeriti u dokumentima fajlove-->
+
+<DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Deni Beatz Website</title>
+        <link rel="stylesheet" href="product.css">
+    
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+      </head>
+  <body>
+        
+    <header>
+      <!--Nav-->
+      <div class="nav container">
+        <a href=""><img src="img/circled logo.png" alt="" style="width: 35px;"></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="about.html">ABOUT</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        
+        <!--Cart Icon-->
+        <i class="bx bx-shopping-bag" id="cart-icon"></i>
+        <div class="notification" id="cart-notification">0</div>
+        <!-- Cart -->
+        <div class="cart">
+          <h2 class="cart-title">Your Cart</h2>
+          <!--Content-->
+          <div class="cart-content">
+            <div class="cart-content">
+              
+            </div>
+          </div>
+          <!--Total-->
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0</div>
+          </div>
+          <!--Buy Button-->
+          <button type="button" class="btn-buy">Continue to purchase</button>
+          <!--Cart Close-->
+          <i class="bx bx-x" id="close-cart"></i>
+    
+        </div>
+      </div>
+    </header>
+
+    <section id="prodetails" class="section-p1">
+      <div class="productcontainer">
+          <div class="single-pro-image">
+              <img src="img/Cover Arts/bro first.png" width="100%" id="MainImage product-img" class="product-img">
+          </div>
+      
+          <div class="single-pro-details">
+            <h4 class="product-title">Doja 2</h4>
+            <h2 id="price" class="price">$10</h2>
+            <select id="select" class="licence">
+             <option>Select Licence</option>
+             <option>MP3</option>
+             <option>Tagged Wav</option>
+             <option>Un-Tagged Wav</option>
+             <option>Stems</option>
+             <option>Exlusive</option>
+            </select>
+  
+            <script>
+                  let select = document.getElementById('select');
+                  let price = document.getElementById('price');
+
+                  // Prices
+                  let prices = {
+                    "Select Licence": '$10',
+                    "MP3": '$10',
+                    "Tagged Wav": '$17',
+                    "Un-Tagged Wav": '$22',
+                    "Stems": '$80',
+                    "Exlusive": '$100'
+                  }
+
+                  // When the value of select changes, this event listener fires and changes the text content of price to the coresponding value from the prices object
+                  select.addEventListener('change', () => {
+                    price.textContent = prices[select.value];
+                  });
+            </script>
+                <button class="add-cart">Add To Cart<i class='bx bx-cart-add add-cart'></i>></button>
+                <h4>Product Details</h4>
+                <span>JBEE x ArrDee Type Beat - Bro First,the beat is melodic,hard and bouncy,it has similar arrangement to the JBEE type beats,it's has 140 BPM and key of E minor,prices are from range from $10 to $100;$10 are price for MP3 licence,$17 for un-mastered wav file with my tag and $22 without my tag,stems are $80 and Exlusive licence is $100.</span>
+            </div>
+            <div id="audio">
+                <audio controls style="width:100%;"> 
+                  <source src="Audio/Bro First 140 x E minor.mp3" type="audio/mpeg">
+                </audio>
+              </div>
+          </div>
+        </section>
+
+        <section id="product1" class="section-p1"> <!--You May Like this also-->
+          <h2>You may Like this also</h2>
+          <p>New Beats that can fit you and your budget</p>
+          <div class="pro-container">
+            <div class="pro">
+              <img src="img/Cover Arts/COVER ART.jpg" onclick="window.location.href='sproduct5.html';" alt="">
+              <div class="des">
+                <span>Trap Beats</span>
+                <h5>All I need</h5>
+                <div class="star">
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star</i>
+                </div>
+                <h4>$25</h4>
+              </div>
+              <a href="#"><i class="material-icons card">shopping_cart</i></a>
+            </div>
+          </section>
+
+        <section id="newsletter" class="section-p1 section-m1"> <!--Newslatter-->
+          <div class="newtext">
+            <h4>Sign Up to Newsletter</h4>
+            <p>Get monthly E-Mails about <span>new products,offers</span> and <span>discounts</span></p>
+          </div>
+          <div class="form">
+            <input type="text" placeholder="Your E-Mail adress">
+            <button class="">Sign Up</button>
+          </div>
+        </section>
+    
+        <footer class="section-p1"> <!--Footer-->
+          <div class="col">
+            <h4>Contact</h4>
+            <p><strong>E-Mail:</strong> denibeatzcontact@gmail.com</p>
+            <div class="follow">
+              <h4 class="foter-follow">Follow me</h4>
+              <div class="icon" size="30px">
+                <a href="https://www.youtube.com/channel/UCesqkS84NvfWlzdk7XA8eAA?sub_confirmation=1" target=_blank><ion-icon name="logo-youtube"></ion-icon></a>
+                <a href="https://www.instagram.com/prodby.denibeatz/" target=_blank><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="https://twitter.com/BeatzDeni" target=_blank><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="https://www.facebook.com/profile.php?id=100077436686693" target=_blank><ion-icon name="logo-facebook"></ion-icon></a>
+              </div>
+              <img class="footer-logo" src="img/logo.jpg" alt="">
+            </div>
+          </div>
+    
+          <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="">Safety</a>
+            <a href="">Delivery</a>
+          </div>
+    
+          <div class="col">
+            <h4>Account</h4>
+            <a href="#">Sign in</a>
+            <a href="">Card</a>
+            <a href="">Liked items</a>
+            <a href="">Help</a>
+          </div>
+    
+          <div class="payments">
+            <img class="payment-gateways" src="img/card_img.png" alt="">
+          </div>
+    
+          <div class="copyright">
+            <p>© 2022, Deni Beatz Store Website</p>
+          </div>
+        </footer>
+        
+    
+    
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+        <script src="javacart.js"></script>
+  </body>
+    </html> 

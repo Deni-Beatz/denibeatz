@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./payment.js"></script>
+  <script src="./checkout.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+<style>
+  /* Styles for the cart items container */
+
+#product-items {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+/* Styles for each product details container */
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.product-details img {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+
+/* Styles for the product title */
+
+.product-details h3:first-child {
+  margin-top: 0;
+}
+
+
+/* Styles for the total price container */
+
+#total {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+/* Styles for the continue to payment button */
+
+button {
+  background-color: #4c5baf;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 0 auto;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#buy-btn {
+  background-color: #4c5baf;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0 auto;
+  margin-top: 20px;
+  cursor: pointer;
+}
+#clear-button {
+  background-color: #4c5baf;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0 auto;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#buy-btn.non-active {
+  display: block;
+}
+
+/* Styles for the continue to payment button when hovered */
+
+button:hover {
+  opacity: 0.8;
+}
+
+#audio {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10px;
+}
+</style>
+
+<h2 style="text-align:center;">Checkout</h2>
+<div id="product-items">
+  <p style="text-align:center;"><span id="added-products"></span></p>
+  <div class="product-container">
+    <div id="cart-items"></div>
+  </div>
+  <button id="clear-button">CLEAR ITEMS - REDIRECT TO HOME</button>
+</div>
+
+<div class="total">
+  <h3 style="text-align:center; display: none;">Subtotal: <br><span id="subtotal"></span></h3>
+  <h3 style="text-align:center;">Total: <br><span id="total" class="checkout-total">$0</span></h3>
+  <a href="payment.html"><button type="submit" class="buy-button" style="background-color: rgb(29, 4, 216);">Continue to purchase</button></a>
+  <a href="sproduct6.html" onclick="event.preventDefault(); window.location.href = 'sproduct6.html'; alert('You will be redirected to the home page');">
+    <button style="background-color: rgb(216, 4, 4);">Cancel</button>
+  </a>
+</div>
+
+<script>
+  const clearButton = document.querySelector('#clear-button');
+clearButton.addEventListener('click', () => {
+  // Step 1: Clear the cart items by removing all child elements of the cart-items container
+  const cartItemsContainer = document.querySelector('#cart-items');
+  cartItemsContainer.innerHTML = '';
+
+  // Step 2: Clear the total amount
+  const totalElement = document.querySelector('#total');
+  totalElement.textContent = '$0';
+
+  // Step 3: Clear the added products
+  const addedProductsContainer = document.querySelector('#added-products');
+  addedProductsContainer.innerHTML = '';
+
+  // Step 4: Hide the continueButton
+  const continueButton = document.querySelector('.buy-button');
+  continueButton.style.display = 'none';
+
+  // Step 5: Delete the duplicate licenses from the server
+  removeDuplicateLicenses()
+    .then(() => {
+      // Step 6: Redirect to the home page
+      window.location.href = './sproduct6.html';
+    })
+    .catch(error => {
+      console.error(error);
+    });
+});
+
+// Function to remove duplicate licenses from the server
+function removeDuplicateLicenses() {
+  return new Promise((resolve, reject) => {
+    fetch('/cart-items')
+      .then(response => response.json())
+      .then(data => {
+        const cartItems = data.items;
+        const uniqueLicenses = {};
+
+        // Find duplicate licenses
+        cartItems.forEach(item => {
+          const { title, license } = item;
+          const combination = title + license;
+
+          if (uniqueLicenses[combination]) {
+            // Duplicate license found, delete it from the server
+            deleteLicenseFromServer(item.id);
+          } else {
+            uniqueLicenses[combination] = true;
+          }
+        });
+
+        resolve();
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
+}
+
+// Function to delete a license from the server
+function deleteLicenseFromServer(itemId) {
+  return fetch(`/delete-license/${itemId}`, { method: 'DELETE' })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to delete license');
+      }
+    });
+}
+
+  fetch('/cart-items')
+    .then(response => response.json())
+    .then(data => {
+      const cartItems = data.items;
+      const totalAmount = data.total_price;
+      const cartItemsContainer = document.querySelector('#cart-items');
+      const totalElement = document.querySelector('#total');
+      const addedProductsContainer = document.querySelector('#added-products');
+      const uniqueCombinations = [];
+
+      // Clear the existing cart items before adding the fetched ones
+      cartItemsContainer.innerHTML = '';
+
+      // Generate HTML elements to display cart items
+      cartItems.forEach(item => {
+        const { title, price, licence } = item;
+        const combination = title + licence;
+
+        // Check if the combination has already been processed
+        if (!uniqueCombinations.includes(combination)) {
+          const itemContainer = document.createElement('div');
+          itemContainer.classList.add('cart-item');
+
+          const itemTitle = document.createElement('h3');
+          itemTitle.textContent = title;
+
+          const itemPrice = document.createElement('p');
+          itemPrice.textContent = price;
+
+          const itemLicense = document.createElement('p');
+          itemLicense.textContent = licence;
+
+          itemContainer.appendChild(itemTitle);
+          itemContainer.appendChild(itemPrice);
+          itemContainer.appendChild(itemLicense);
+
+          cartItemsContainer.appendChild(itemContainer);
+
+          // Add the combination to the list of processed combinations
+          uniqueCombinations.push(combination);
+        }
+      });
+
+      totalElement.textContent = `$${totalAmount}`;
+    })
+    .catch(error => {
+      console.error('Failed to fetch cart items', error);
+    });
+</script>
+</html>
+<!--
+
+// MAKE THAT IT PASS TOTAL TO RUBY!
+
+-/-/ ADD DELETE ICON TO EVERY ADDED BUTTON - MAYBE , MAYBE NOT BECAUSE I ALREADY HAVE ONE TO CLEAR ALL ITEMS FROM CART
+
+// MAYBE ITS WRONG THAT IF THERE IS 1 ITEM IN CHECKOUT PAGE THAT THERE SHOULD BE 1 IN PRODUCT PAGE-->

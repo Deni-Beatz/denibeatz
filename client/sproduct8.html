@@ -1,0 +1,223 @@
+<DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Deni Beatz Website</title>
+        <link rel="stylesheet" href="product.css">
+    
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+      </head>
+  <body>
+
+    <header>
+      <!--Nav-->
+      <div class="nav container">
+        <a href=""><img src="img/circled logo.png" alt="" style="width: 35px;"></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="about.html">ABOUT</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        
+        <!--Cart Icon-->
+        <i class="bx bx-shopping-bag" id="cart-icon"></i>
+        <div class="notification" id="cart-notification">0</div>
+        <!-- Cart -->
+        <div class="cart">
+          <h2 class="cart-title">Your Cart</h2>
+          <!--Content-->
+          <div class="cart-content">
+            <div class="cart-content">
+              
+            </div>
+          </div>
+          <!--Total-->
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0</div>
+          </div>
+          <!--Buy Button-->
+          <button type="button" class="btn-buy">Continue to purchase</button>
+          <!--Cart Close-->
+          <i class="bx bx-x" id="close-cart"></i>
+    
+        </div>
+      </div>
+    </header>
+
+    <section id="prodetails" class="section-p1">
+      <div class="productcontainer">
+          <div class="single-pro-image">
+              <img src="img/Cover Arts/Lo Fi Early Morning.jpg" width="100%" id="MainImage product-img" class="product-img">
+          </div>
+      
+          <div class="single-pro-details">
+            <h4 class="product-title">Early Morning</h4>
+            <h2 id="price" class="price">$5</h2>
+            <select id="select" class="licence">
+             <option>Select Licence</option>
+             <option>MP3</option>
+             <option>Tagged Wav</option>
+             <option>Un-Tagged Wav</option>
+             <option>Stems</option>
+             <option>Exlusive</option>
+            </select>
+  
+            <script>
+                  let select = document.getElementById('select');
+                  let price = document.getElementById('price');
+
+                  // Prices
+                  let prices = {
+                    "Select Licence": '$5',
+                    "MP3": '$5',
+                    "Tagged Wav": '$15',
+                    "Un-Tagged Wav": '$17',
+                    "Stems": '$27',
+                    "Exlusive": '$55'
+                  }
+
+                  // When the value of select changes, this event listener fires and changes the text content of price to the coresponding value from the prices object
+                  select.addEventListener('change', () => {
+                    price.textContent = prices[select.value];
+                  });
+            </script>
+                <button class="add-cart">Add To Cart<i class='bx bx-cart-add add-cart'></i>></button>
+                <h4>Product Details</h4>
+                <span>Lo Fi Beat = "Early Morning",in A Minor Scaler and 75 BPM,The beat is relaxing and sleepy,Perfect for Sleeping and relaxing,the prices are very low;$5 for MP3,$15 for Tagged Wav,$17 for Un-Tagged Wav,$27 for Stems and $55 for Exlusive.Listen this on a playlist: <a href="">Listen on Playlist</span>
+            </div>
+            <div id="audio">
+                <audio controls style="width:100%;"> 
+                  <source src="Audio/Early Morning 75 x A minor.mp3" type="audio/mpeg">
+                </audio>
+              </div>
+          </div>
+        </section>
+
+        <section id="product1" class="section-p1"> <!--You May Like this also-->
+          <h2>You may Like this also</h2>
+          <p>New Beats that can fit you and your budget</p>
+          <div class="pro-container">
+            <div class="pro">
+              <img src="img/Cover Arts/freestyle.png" onclick="window.location.href='sproduct5.html';" alt="">
+              <div class="des">
+                <span>Pop Beats</span>
+                <h5>Fast Freestyle Type Beat - "Flames on mic"</h5>
+                <div class="star">
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star</i>
+                </div>
+                <h4>$20</h4>
+              </div>
+              <a href="#"><i class="material-icons card">shopping_cart</i></a>
+            </div>
+          </section>
+
+        <section id="newsletter" class="section-p1 section-m1"> <!--Newslatter-->
+          <div class="newtext">
+            <h4>Sign Up to Newsletter</h4>
+            <p>Get monthly E-Mails about <span>new products,offers</span> and <span>discounts</span></p>
+          </div>
+          <div class="form">
+            <input type="text" placeholder="Your E-Mail adress">
+            <button class="">Sign Up</button>
+          </div>
+        </section>
+
+        <div class="progress-checkout-container">
+          <div class="progress-step-container">
+            <div class="step-check"></div>
+            <div class="step-title">Payment</div>
+          </div>
+          <div class="progress-step-container">
+            <div class="step-check"></div>
+            <div class="step-title">Review</div>
+          </div>
+          <div class="progress-step-container">
+            <div class="step-check"></div>
+            <div class="step-title">Download</div>
+          </div>
+        </div>
+
+        <div class="form-container">
+          <h2 class="form-title">Payment Details</h2>
+          <form action="" class="checkout-form">
+            <div class="input-line">
+              <label for="name">Name on card</label>
+              <input type="text" name="name" id="name" placeholder="Your name and surname">
+            </div>
+            <div class="input-line">
+              <label for="card">Card Number</label>
+              <input type="text" name="card" id="card" placeholder="4111-1111-1111-1111">
+            </div>
+            <div class="input-container">
+              <div class="input-line">
+                <label for="date">Expiring Date</label>
+                <input type="text" name="date" id="date" placeholder="09-21">
+              </div>
+              <div class="input-line">
+                <label for="cvc">CVC</label>
+                <input type="text" name="cvc" id="cvc" placeholder="***">
+              </div>
+            </div>
+
+            <input type="button" value="Complete purchase">
+         </form>
+        </div>
+    
+        <footer class="section-p1"> <!--Footer-->
+          <div class="col">
+            <h4>Contact</h4>
+            <p><strong>E-Mail:</strong> denibeatzcontact@gmail.com</p>
+            <div class="follow">
+              <h4 class="foter-follow">Follow me</h4>
+              <div class="icon" size="30px">
+                <a href="https://www.youtube.com/channel/UCesqkS84NvfWlzdk7XA8eAA?sub_confirmation=1" target=_blank><ion-icon name="logo-youtube"></ion-icon></a>
+                <a href="https://www.instagram.com/prodby.denibeatz/" target=_blank><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="https://twitter.com/BeatzDeni" target=_blank><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="https://www.facebook.com/profile.php?id=100077436686693" target=_blank><ion-icon name="logo-facebook"></ion-icon></a>
+              </div>
+              <img class="footer-logo" src="img/logo.jpg" alt="">
+            </div>
+          </div>
+    
+          <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="">Safety</a>
+            <a href="">Delivery</a>
+          </div>
+    
+          <div class="col">
+            <h4>Account</h4>
+            <a href="#">Sign in</a>
+            <a href="">Card</a>
+            <a href="">Liked items</a>
+            <a href="">Help</a>
+          </div>
+    
+          <div class="payments">
+            <img class="payment-gateways" src="img/card_img.png" alt="">
+          </div>
+    
+          <div class="copyright">
+            <p>© 2022, Deni Beatz Store Website</p>
+          </div>
+        </footer>
+        
+    
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+        <script src="javacart.js"></script>
+        
+  </body>
+    </html> 

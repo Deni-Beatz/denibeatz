@@ -1,0 +1,455 @@
+<DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Deni Beatz Website</title>
+      <link rel="stylesheet" href="css/product.css">
+  
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      
+      <link rel="website icon" type="x-icon" href="img/WEBicon/favicion.ico">  
+  
+    </head>
+<body>
+
+  <header>
+    <!--Nav-->
+    <div class="nav container">
+      <a href=""><img src="images/circled logo.png" alt="" style="width: 40px;"></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      
+      <!--Cart Icon-->
+      <i class="bx bx-shopping-bag" id="cart-icon"></i>
+      <div class="notification" id="cart-notification">0</div>
+      <!-- Cart -->
+      <div class="cart">
+        <h2 class="cart-title">Your Cart</h2>
+        <!--Content-->
+        <div class="cart-content">
+          <div class="cart-content">
+            
+          </div>
+        </div>
+        <!--Buy Button-->
+        <button type="button" class="btn-buy">Continue to purchase</button>
+        <!--Cart Close-->
+        <i class="bx bx-x" id="close-cart"></i>
+  
+      </div>
+    </div>
+  </header>
+  
+      <!-- <section id="page-header" style="align-items: center;">
+        <h2>#this is fire</h2>
+        <p>Every product is up to 20% OFF</p>
+      </section>
+
+        <form>
+          <div class="filter">
+            <input type="text" id="search-bar" placeholder="Search...">
+            <button class="btn" type="button" onclick="search()">Search</button>
+            <label for="min-price">Min Price:</label>
+            <input type="number" id="min-price" min="0" max="1000" step="5">
+            <label for="max-price">Max Price:</label>
+            <input type="number" id="max-price" min="0" max="1000" step="5">
+            <button id="btn" type="button" onclick="filter()">Filter</button>
+          </div>
+        </form>        
+      
+ -->
+      <section id="product1" class="section-p1"> <!--Newest Products-->
+        <div class="pro-container">
+          <div class="pro">
+            <img src="images/Cover Arts/enjoy the nature.jpg" onclick="window.location.href='sproduct6.html';" alt="">
+            <div class="des">
+              <span>Trap Beats</span>
+              <h5 class="name">Enjoy</h5>
+              <div class="star">
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+              </div>
+              <h4 id="price">$20</h4>
+            </div>
+            <a href="sproduct6.html"><i class="material-icons card">tour</i></a>
+          </div>
+        <!-- <div class="pro">
+          <img src="images/Cover Arts/Autumn.png" onclick="window.location.href='sproduct3.html';" alt="">
+          <div class="des">
+            <span>Pop Beats</span>
+            <h5 class="name">Pop Type Beat - Autumn</h5>
+            <div class="star">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+            </div>
+            <h4 id="price">$5</h4>
+          </div>
+          <a href="sproduct3.html"><i class="material-icons card">tour</i></a>
+        </div>
+        <div class="pro">
+          <img src="images/Cover Arts/gunna.png" onclick="window.location.href='sproduct10.html';"  alt="">
+          <div class="des">
+            <span>Trap Beats</span>
+            <h5 class="name">Gunna x Young Thug x Future Trap Type Beat - "Heavy Diamonds"</h5>
+            <div class="star">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+            </div>
+            <h4 id="price">$5</h4>
+          </div>
+          <a href="sproduct10.html"><i class="material-icons card">tour</i></a>
+        </div>
+        <div class="pro">
+          <img src="images/Cover Arts/new love.png" onclick="window.location.href='sproduct.html';" alt="">
+          <div class="des">
+            <span>Trap Beats</span>
+            <h5 class="name">Lil Tecca Type Beat - New Love</h5>
+            <div class="star">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+            </div>
+            <h4 id="price">$25</h4>
+          </div>
+          <a href="sproduct.html"><i class="material-icons card">tour</i></a>
+        </div>
+        <div class="pro">
+          <img src="images/Cover Arts/space.png" onclick="window.location.href='sproduct13.html';" alt="">
+          <div class="des">
+            <span>Hypepop Beats</span>
+            <h5 class="name">Lil Uzi Vert x Yeat x Ken Carson Type Beat - "Space Connection"</h5>
+            <div class="star">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+            </div>
+            <h4 id="price">$20</h4>
+          </div>
+          <a href="sproduct13.html"><i class="material-icons card">tour</i></a>
+        </div>
+        <div class="pro">
+          <img src="img/Cover Arts/COVER ART.jpg" onclick="window.location.href='sproduct11.html';" alt="">
+          <div class="des">
+            <span>Trap Beats</span>
+            <h5 class="name">Trap Lil Tecca x Iann Dior Type Beat - "All I Need"</h5>
+            <div class="star">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+            </div>
+            <h4 id="price">$10</h4>
+          </div>
+          <a href="sproduct11.html"><i class="material-icons card">tour</i></a>
+        </div>
+        <div class="pro">
+          <img src="img/Cover Arts/rocket.jpg" onclick="window.location.href='sproduct14.html';" alt="">
+          <div class="des">
+            <span>Trap Beats</span>
+            <h5 class="name">KAIZA x Lil Tecca Trap x Boom Bap Type Beat - "Rocket"</h5>
+            <div class="star">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+            </div>
+            <h4 id="price">$10</h4>
+          </div>
+          <a href="sproduct14.html"><i class="material-icons card">tour</i></a>
+        </div>
+         <div class="pro">
+          <img src="img/Cover Arts/doja.png" onclick="window.location.href='sproduct12.html';" alt="">
+          <div class="des">
+            <span>Drill Beats</span>
+            <h5 class="name">Central Cee Doja Type Beat - "Doja 2"</h5>
+            <div class="star">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+            </div>
+            <h4 id="price">$10</h4>
+          </div>
+          <a href="sproduct12.html"><i class="material-icons card">tour</i></a>
+        </div> 
+        <div class="pro">
+          <img src="img/Cover Arts/lil baby.jpg" onclick="window.location.href='sproduct9.html';" alt="">
+          <div class="des">
+            <span>Trap Beats</span>
+            <h5 class="name">Trap Lil Baby Type Beat - "Midnight flight"</h5>
+            <div class="star">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+            </div>
+            <h4 id="price">$15</h4>
+          </div>
+          <a href="sproduct9.html"><i class="material-icons card" type="icon">tour</i></a>
+        </div>
+        <div class="pro">
+          <img src="img/Cover Arts/Lo Fi Early Morning.jpg" onclick="window.location.href='sproduct8.html';" alt="">
+          <div class="des">
+            <span>Lo Fi Beats</span>
+            <h5 class="name">Lo Fi Beat = "Early Morning"</h5>
+            <div class="star">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+            </div>
+            <h4 id="price">$5</h4>
+          </div>
+          <a href="sproduct8.html"><i class="material-icons card">tour</i></a>
+        </div>
+        <div class="pro">
+          <img src="img/Cover Arts/cover art money.jpg" onclick="window.location.href='sproduct7.html';" alt="">
+          <div class="des">
+            <span>Trap Beats</span>
+            <h5>DaBaby x Migos Type Beat = "Money Race"</h5>
+            <div class="star">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+            </div>
+            <h4 id="price">$15</h4>
+          </div>
+          <a href="sproduct7.html"><i class="material-icons card">tour</i></a>
+        </div>
+        <div class="pro">
+          <img src="img/Cover Arts/enjoy the nature.jpg" onclick="window.location.href='sproduct6.html';" alt="">
+          <div class="des">
+            <span>Trap Beats</span>
+            <h5 class="name">Lil Tjay x Trap Type Beat - "Enjoy"</h5>
+            <div class="star">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+            </div>
+            <h4 id="price">$20</h4>
+          </div>
+          <a href="#"><i class="material-icons card">tour</i></a>
+        </div>
+        <!-- <div class="pro">
+          <img src="img/Cover Arts/Flowers.png" onclick="window.location.href='sproduct4.html';" alt="">
+          <div class="des">
+            <span>Drill Beats</span>
+            <h5 class="name">ArrDee x Central Cee Drill Type Beat - "Flowers"</h5>
+            <div class="star">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+            </div>
+            <h4 id="price">$20</h4>
+          </div>
+          <a href="sproduct4.html"><i class="material-icons card">tour</i></a>
+        </div> 
+        <div class="pro">
+          <img src="img/Cover Arts/freestyle.png" onclick="window.location.href='sproduct5.html';" alt="">
+          <div class="des">
+            <span>Trap Beats</span>
+            <h5 class="name">Fast Freestyle Type Beat - "Flames on mic"</h5>
+            <div class="star">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+            </div>
+            <h4 id="price">$10</h4>
+          </div>
+          <a href="sproduct5.html"><i class="material-icons card">tour</i></a>
+        </div>
+      </section> -->
+
+      <script>
+        document.getElementById("searchBar").addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+          filterContent();
+        }
+      });
+
+      const searchBar = document.getElementById('search-bar');
+      const products = document.querySelectorAll('.pro');
+
+      searchBar.addEventListener('keyup', function(event) {
+        const searchTerm = event.target.value.toLowerCase();
+
+        products.forEach(function(product) {
+          const title = product.querySelector('.name').textContent.toLowerCase();
+          const match = title === searchTerm;
+
+          if (match) {
+            product.style.display = 'block';
+          } else {
+            product.style.display = 'none';
+          }
+        });
+      });
+      </script>
+
+<!-- Begin Sendinblue Form -->
+<!-- START - We recommend to place the below code in head tag of your website html  -->
+<style>
+  @font-face {
+    font-display: block;
+    font-family: Roboto;
+    src: url(https://assets.sendinblue.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
+  }
+
+  @font-face {
+    font-display: fallback;
+    font-family: Roboto;
+    font-weight: 600;
+    src: url(https://assets.sendinblue.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
+  }
+
+  @font-face {
+    font-display: fallback;
+    font-family: Roboto;
+    font-weight: 700;
+    src: url(https://assets.sendinblue.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
+  }
+
+  #sib-container input:-ms-input-placeholder {
+    text-align: left;
+    font-family: "Helvetica", sans-serif;
+    color: #c0ccda;
+  }
+
+  #sib-container input::placeholder {
+    text-align: left;
+    font-family: "Helvetica", sans-serif;
+    color: #c0ccda;
+  }
+</style>
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<!--  END - We recommend to place the above code in head tag of your website html -->
+
+<!-- START - We recommend to place the below code where you want the form in your website html  -->
+<div class="sib-form" style="text-align: center;
+         background-color: #EFF2F7;                                           ">
+  <div id="sib-form-container" class="sib-form-container">
+    <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; border-radius:3px; border-width:1px; border-color:#C0CCD9; border-style:solid;">
+      <form id="sib-form" method="POST" action="https://505eab42.sibforms.com/serve/MUIEAHk4ZprTjhIvEfMvNdC2tnlM8i1zBxyGRBbc567Y0qud2FMtFfyW3np2SXJvLwbvdfWkGX-KMbhT31wzvZ4bQQP7pQVwYJl7xAqJXhFj3fjHEHZgRt6bW2MgeEEPYtOquCSOU8EDaf0tS_BFVNV-2adbyVyrpvyAzl71DcL0zEtZB9FmJYJnb6P9J93OEwZH9iKpK_myyGsa" target="_blank">
+        <div style="padding: 8px 0;">
+          <div class="sib-form-block" style="font-size:32px; text-align:left; font-weight:700; font-family:&quot;Helvetica&quot;, sans-serif; color:#3C4858; background-color:transparent; text-align:left">
+            <p>Deni Beatz's Newsletter</p>
+          </div>
+        </div>
+        <div style="padding: 8px 0;">
+          <div class="sib-form-block" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#3C4858; background-color:transparent; text-align:left">
+            <div class="sib-text-form-block">
+              <p>Subscribe to my newsletter and stay updated.</p>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 8px 0;">
+          <div class="sib-input sib-form-block">
+            <div class="form__entry entry_block">
+              <div class="form__label-row ">
+                <label class="entry__label" style="font-weight: 700; text-align:left; font-size:16px; text-align:left; font-weight:700; font-family:&quot;Helvetica&quot;, sans-serif; color:#3c4858;" for="EMAIL" data-required="*">Enter your email address to subscribe</label>
+
+                <div class="entry__field">
+                  <input class="input " type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="EMAIL" data-required="true" required />
+                </div>
+              </div>
+
+              <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+              </label>
+              <label class="entry__specification" style="font-size:12px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#8390A4; text-align:left">
+                Provide your email address to subscribe. For e.g abc@xyz.com
+              </label>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 8px 0;">
+          <div class="sib-form-block" style="text-align: left">
+            <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:16px; text-align:left; font-weight:700; font-family:&quot;Helvetica&quot;, sans-serif; color:#FFFFFF; background-color:#3E4857; border-radius:3px; border-width:0px;" form="sib-form" type="submit">
+              <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
+                <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+              </svg>
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+        <input type="text" name="email_address_check" value="" class="input--hidden">
+        <input type="hidden" name="locale" value="en">
+        <input type="hidden" name="html_type" value="simple">
+      </form>
+    </div>
+  </div>
+</div>
+<!-- END - We recommend to place the below code where you want the form in your website html  -->
+<!-- End Sendinblue Form -->
+
+      <footer class="section-p1"> <!--Footer-->
+        <div class="col">
+          <h4>Contact</h4>
+          <p><strong>E-Mail:</strong> denibeatzcontact@gmail.com</p>
+          <div class="follow">
+            <h4 class="foter-follow">Follow me</h4>
+            <div class="icon" size="30px">
+              <a href="https://www.youtube.com/channel/UCesqkS84NvfWlzdk7XA8eAA?sub_confirmation=1" target=_blank><ion-icon name="logo-youtube"></ion-icon></a>
+              <a href="https://www.instagram.com/prodby.denibeatz/" target=_blank><ion-icon name="logo-instagram"></ion-icon></a>
+              <a href="https://twitter.com/BeatzDeni" target=_blank><ion-icon name="logo-twitter"></ion-icon></a>
+              <a href="https://www.facebook.com/profile.php?id=100077436686693" target=_blank><ion-icon name="logo-facebook"></ion-icon></a>
+            </div>
+            <img class="footer-logo" src="images/circled logo.png" alt="">
+          </div>
+        </div>
+  
+        <div class="col">
+          <h4>About</h4>
+          <a href="#">About us</a>
+          <a href="">Safety</a>
+          <a href="">Delivery</a>
+        </div>
+  
+        <div class="payments">
+          <img class="payment-gateways" src="images/card_img.png" alt="">
+        </div>
+  
+        <div class="copyright">
+          <p>© 2023, Deni Beatz Store Website</p>
+        </div>
+      </footer>
+      
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+      <script src="script.js"></script>
+</body>
+  </html> 
+
+<!--ADDS PLAY LIKE IN BOX-->

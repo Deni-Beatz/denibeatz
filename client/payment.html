@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Deni Beatz Website</title>
+    <meta name="description" content="A demo of Stripe" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./payment.js"></script>
+  </head>
+
+  <body>
+   
+    <div class="sr-root">
+      <div class="sr-main">
+        <h1>Pay with a bunch of payment option</h1>
+
+        <form id="payment-form" method="POST">
+          <input type="text" name="email" id="email" placeholder="E-Mail" required>
+          <input type="text" name="name" id="name" placeholder="Full Name" required>
+    
+          <div id="payment-element"></div>
+
+          <a id="download-link" style="display: none;"></a>
+              
+          <button>Pay</button><!--Make functional-->
+
+          <!--Make total price hidden and that total of this is same as in checkout and that its connected to ruby-->
+          <div id="error-messages"></div>
+        </form>        
+      </div>
+    </div>   
+</body>
+</html>
+<!--FIND OUT WHY IT DOES NOT CREATE PAYMENT INTENT , PROBALLY BECAUSE OF THE TOTAL-->
+<!--MAYBE THERE IS ACTUALLY NO ERROR WITH ANY CODE,EITHER CONSOLE COMMANDS-->
+
+<!--PASS TOTAL TO RUBY-->
+ 
+  <!--MAKE DESIGN AND TAHT IT DISPAY CART(PRODUCT(S) ) DETAILS SUCH AS: ITEM(S) NAME,LICENCE,AUDIO,IMAGE,PRICE-->
+
+  <!--dESIGN IS LIKE CHECKOUT THEN NEXT TO IT PAYMENT-->
+
+<!--Make sure in payment downloadszz-->
+
+<!--Promjena plana - checkout na jednoj i placanje na drugoj stranici
+
+// MAKE THAT IT PASS TOTAL OR SUBTOTAL to this page then
+// CONNECT IT WITH RUBY
+
+FIGURE OUT WHY NOT DISPLAY IT
+-->

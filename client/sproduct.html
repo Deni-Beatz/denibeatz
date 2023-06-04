@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deni Beatz - Beat for price that fit your budget</title>
+  <link rel="stylesheet" href="css/product.css">
+  <script src="./checkout.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <header>
+    <!--Nav-->
+    <div class="nav container">
+      <a href=""><img src="img/circled logo.png" alt="" style="width: 35px;"></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      
+      <!--Cart Icon-->
+      <i class="bx bx-shopping-bag" id="cart-icon"></i>
+      <div class="notification" id="cart-notification">0</div>
+      <!-- Cart -->
+      <div class="cart">
+        <h2 class="cart-title">Your Cart</h2>
+        <!--Content-->
+        <div class="cart-content">
+          <div class="cart-content">
+            
+          </div>
+        </div>
+        <!--Total-->
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price">$0</div>
+        </div>
+        <!--Buy Button-->
+        <button type="button" class="btn-buy">Continue to purchase</button>
+        <!--Cart Close-->
+        <i class="bx bx-x" id="close-cart"></i>
+  
+      </div>
+    </div>
+  </header>
+  
+  <section id="prodetails" class="section-p1">
+    <div class="productcontainer" id="high">
+    <div class="single-pro-image">
+        <img src="images/Cover Arts/High better.png" width="100%" id="MainImage product-img" class="product-img">
+    </div>
+
+    <div class="single-pro-details">
+      <h4 class="product-title">Lil Mosey x Lil Tecca Type Beat - High</h4>
+      <h2 id="price" class="price">$30</h2>
+      <h3>Select Licence</h3>
+      <select id="select" class="licence">
+        <option>MP3</option>
+        <option>Tagged Un-mastered Wav</option>
+        <option>Un-Tagged Un-mastered Wav</option>
+        <option>Stems</option>
+        <option>Exclusive</option>
+      </select>
+
+        <script>
+          let select = document.getElementById('select');
+          let price = document.getElementById('price');
+
+          // Prices
+          let prices = {
+            "MP3": '$30',
+            "Tagged Un-mastered Wav": '$35',
+            "Un-Tagged Un-mastered Wav": '$40',
+            "Stems": '$80',
+            "Exclusive": '$150'
+          }
+
+          // When the value of select changes, this event listener fires and changes the text content of price to the coresponding value from the prices object
+          select.addEventListener('change', () => {
+            price.textContent = prices[select.value];
+          });
+        </script>
+          <button class="add-cart">Add To Cart <i class='bx bx-cart-add add-cart'></i></button>
+          <h4>Product Details</h4>
+          <span>Melodic Lil Mosey Type Beat - High,beat is melodic,bouncy and hard,it has the melody and rhythm of a lil Mosey type song,it have prices from range $30-$150,mastered and tagged MP3 licence is $30,un-mastered wav with my tag is $35 and without my tag $40,stems are $80 and Exlusive licence is $150</span>
+      </div>
+      <div id="audio">
+        <audio id="audioPlayer" controls style="width:100%;"> <!--Make that it download audoi after click on button--> 
+          <source src="./MP3 FOR NOPROFIT/140 x A min - High.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+  </section>
+
+  
+  <script>
+    const addToCartButton = document.querySelector('.add-cart');
+  
+    addToCartButton.addEventListener('click', () => {
+      // Step 1: Retrieve the necessary information
+      const productTitle = document.querySelector('#title').textContent;
+      const productPrice = document.querySelector('#price').textContent;
+      const selectLicense = document.getElementById('select').value;
+      // Image - not used variable
+      // Audio - not used variable
+  
+      // Step 2: Create the payload to send to the server
+      const payload = {
+        id: generateID(), // New line: Add an ID to the payload
+        title: productTitle,
+        price: productPrice,
+        license: selectLicense,
+        // Image
+        // Audio
+      };
+  
+      // Step 3: Make an AJAX request to the server endpoint
+      fetch('/add-to-cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+        .then(response => {
+          if (response.ok) {
+            // Handle successful response
+            console.log(`Item added to cart with ID: ${payload.id}`);
+          } else {
+            // Handle error response
+            console.error('Failed to add item to cart');
+          }
+        })
+        .catch(error => {
+          // Handle network error
+          console.error('Network error', error);
+        });
+    });
+  
+    function generateID() {
+      const characters = 'abcdefghijklmnopqrstuvwxyz0123456789dbwe';
+      let id = '';
+      for (let i = 0; i < 8; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        id += characters[randomIndex];
+      }
+      return id;
+    }
+  </script>        
+
+  <section id="product1" class="section-p1"> <!--You May Like this also-->
+    <h2>You may Like this also</h2>
+    <p>New Beats that can fit you and your budget</p>
+    <div class="pro-container">
+      <div class="pro">
+        <img src="img/Cover Arts/COVER ART.jpg" onclick="window.location.href='sproduct5.html';" alt="">
+        <div class="des">
+          <span>Trap Beats</span>
+          <h5>Lil Tecca Type Beat - All I need</h5>
+          <div class="star">
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+          </div>
+          <h4>$25</h4>
+        </div>
+        <a href="#"><i class="material-icons card">shopping_cart</i></a>
+      </div>
+    </section>
+    
+  <section id="newsletter" class="section-p1 section-m1"> <!--Newslatter-->
+    <iframe width="900" height="490" src="https://505eab42.sibforms.com/serve/MUIEAGa5dZYIKkib_aCo3XezvhE50H-4FnHRttdHcj0IwwjIoaSKonQ8H4ivyifa-oxE7h6TTH4dvvWZJGX3JG4t86bFKtH5hvCXk04ArUETj-pg6e-utKxArhgNO23ozqHQntLAgssPLsdjSE_9KSfBXTr8cXAAWeozBKdgJXMFdxNbr8NdvO3IJAQKfwcbYZNlXQhac432rJa8" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+  </section>
+
+  <footer class="section-p1"> <!--Footer-->
+    <div class="col">
+      <h4>Contact</h4>
+      <p><strong>E-Mail:</strong> denibeatzcontact@gmail.com</p>
+      <div class="follow">
+        <h4 class="foter-follow">Follow me</h4>
+        <div class="icon" size="30px">
+          <a href="https://www.youtube.com/channel/UCesqkS84NvfWlzdk7XA8eAA?sub_confirmation=1" target=_blank><ion-icon name="logo-youtube"></ion-icon></a>
+          <a href="https://www.instagram.com/prodby.denibeatz/" target=_blank><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="https://twitter.com/BeatzDeni" target=_blank><ion-icon name="logo-twitter"></ion-icon></a>
+          <a href="https://www.facebook.com/profile.php?id=100077436686693" target=_blank><ion-icon name="logo-facebook"></ion-icon></a>
+        </div>
+        <img class="footer-logo" src="img/logo.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="col">
+      <h4>About</h4>
+      <a href="#">About us</a>
+      <a href="">Safety</a>
+      <a href="">Delivery</a>
+    </div>
+
+    <div class="col">
+      <h4>Account</h4>
+      <a href="#">Sign in</a>
+      <a href="">Card</a>
+      <a href="">Liked items</a>
+      <a href="">Help</a>
+    </div>
+
+    <div class="payments">
+      <img class="payment-gateways" src="img/card_img.png" alt="">
+    </div>
+
+    <div class="copyright">
+      <p>© 2023, Deni Beatz Store Website</p>
+    </div>
+  </footer>
+
+  <script src="javacart.js"></script>
+</body>
+</html>
